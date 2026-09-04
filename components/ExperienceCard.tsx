@@ -15,9 +15,12 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
     <motion.div
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group overflow-hidden rounded-2xl border border-char-line bg-char-soft"
+      className="group overflow-hidden rounded-2xl border border-char-line bg-char-soft transition-colors hover:border-ivory/25"
     >
-      <Link href={`/experiences/${experience.slug}`}>
+      <Link
+        href={`/experiences/${experience.slug}`}
+        className="block focus-visible:outline-none"
+      >
         <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={experience.image}
@@ -41,7 +44,7 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
 
         <div className="space-y-3 p-5">
           <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-xl text-ivory">
+            <h3 className="font-display text-xl text-ivory transition-colors group-hover:text-beige">
               {experience.title}
             </h3>
             <span className="whitespace-nowrap font-display text-lg text-ivory">

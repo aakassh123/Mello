@@ -15,14 +15,14 @@ type LinkProps = BaseProps & { href: string };
 
 const styles = {
   primary:
-    "bg-ivory text-char hover:bg-beige",
+    "bg-ivory text-char hover:bg-beige active:translate-y-px",
   secondary:
-    "border border-ivory/30 text-ivory hover:border-ivory/70",
-  ghost: "text-ivory/80 hover:text-ivory",
+    "border border-ivory/30 text-ivory hover:border-ivory/70 active:translate-y-px",
+  ghost: "text-ivory/80 hover:bg-ivory/10 hover:text-ivory",
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 disabled:opacity-40";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-[background-color,border-color,color,transform] duration-200 disabled:pointer-events-none disabled:opacity-40";
 
 export function Button({
   variant = "primary",

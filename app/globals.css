@@ -4,17 +4,63 @@
 
 html {
   scroll-behavior: smooth;
+  background: #15130f;
 }
 
 body {
-  background-color: #15130f;
+  position: relative;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(179, 102, 63, 0.08), transparent 28rem),
+    #15130f;
   color: #f4efe3;
+}
+
+.site-video-content .bg-char {
+  background-color: rgba(21, 19, 15, 0.86);
+}
+
+footer {
+  position: relative;
+  z-index: 10;
 }
 
 ::selection {
   background-color: #b3663f;
   color: #f4efe3;
 }
+
+:focus-visible {
+  outline: 2px solid #dcceb0;
+  outline-offset: 4px;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #15130f;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid #15130f;
+  border-radius: 999px;
+  background: #332d24;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   *,

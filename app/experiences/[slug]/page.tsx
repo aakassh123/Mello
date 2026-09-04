@@ -35,8 +35,8 @@ export default function ExperiencePage({
   const left = spotsLeft(experience);
 
   return (
-    <div className="pt-20">
-      <div className="relative h-[50vh] min-h-[360px] w-full">
+    <div className="pt-16 sm:pt-20">
+      <div className="relative h-[58vh] min-h-[400px] w-full sm:h-[62vh]">
         <Image
           src={experience.image}
           alt={experience.title}
@@ -45,20 +45,20 @@ export default function ExperiencePage({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-char via-char/40 to-char/20" />
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-5xl px-6 pb-10">
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-5xl px-6 pb-8 sm:pb-10">
           <div className="mb-3 flex flex-wrap gap-2">
             {experience.badges.map((b) => (
               <Badge key={b} label={b} />
             ))}
           </div>
-          <h1 className="font-display text-4xl text-ivory sm:text-6xl">
+          <h1 className="max-w-4xl font-display text-4xl leading-[0.98] text-ivory sm:text-6xl">
             {experience.title}
           </h1>
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 px-6 py-14 lg:grid-cols-[1.6fr_1fr]">
-        <div className="space-y-10">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 px-6 py-12 sm:py-14 lg:grid-cols-[1.6fr_1fr]">
+        <div className="space-y-10 lg:pr-6">
           <p className="text-lg leading-relaxed text-ivory/70">
             {experience.longDescription}
           </p>
@@ -99,7 +99,7 @@ export default function ExperiencePage({
           </div>
         </div>
 
-        <aside className="h-fit space-y-5 rounded-2xl border border-char-line bg-char-soft p-6">
+        <aside className="h-fit space-y-5 rounded-2xl border border-char-line bg-char-soft p-5 sm:p-6 lg:sticky lg:top-24">
           <div className="flex items-baseline justify-between">
             <span className="font-display text-3xl text-ivory">
               {formatPrice(experience.price)}

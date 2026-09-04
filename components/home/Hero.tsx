@@ -21,7 +21,9 @@ const line = {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-char pt-24">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-transparent pt-24">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-char/80 via-char/35 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-char/80 via-transparent to-char/20" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
@@ -30,7 +32,6 @@ export function Hero() {
         }}
       />
       <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-clay/20 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-20 top-1/4 h-72 w-72 rounded-full bg-moss/20 blur-[120px]" />
 
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
         <div>
@@ -58,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.6 }}
-            className="mt-8 max-w-md text-lg text-ivory/60"
+            className="mt-8 max-w-md text-lg leading-relaxed text-ivory/70"
           >
             Discover people, places and experiences worth remembering.
           </motion.p>
@@ -76,14 +77,15 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative hidden min-h-[420px] lg:block">
+        <div className="relative hidden min-h-[420px] [perspective:1200px] lg:block">
           {floatingCards.map((c, i) => (
             <motion.div
               key={c.title}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05, rotate: i % 2 === 0 ? 2 : -2, z: 20 }}
               transition={{ delay: 1 + i * 0.15, duration: 0.6 }}
-              className="absolute w-52 animate-float rounded-xl border border-char-line bg-char-soft/90 p-4 backdrop-blur"
+              className="absolute w-52 transform-gpu animate-float rounded-xl border border-ivory/15 bg-char-soft/90 p-4 shadow-2xl shadow-char/50 backdrop-blur"
               style={{ top: c.top, left: c.left, animationDelay: `${i * 0.7}s` }}
             >
               <div className="flex items-center gap-1.5 text-xs text-ivory/40">
