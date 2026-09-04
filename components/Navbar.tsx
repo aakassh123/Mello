@@ -24,6 +24,21 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
     <header
       className={cx(
@@ -33,7 +48,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <Link href="/" className="font-display text-2xl tracking-tight text-ivory">
           MELLO
         </Link>
@@ -57,9 +72,11 @@ export function Navbar() {
         </div>
 
         <button
-          className="text-ivory md:hidden"
+          type="button"
+          className="-mr-2 inline-flex min-h-11 min-w-11 items-center justify-center text-ivory md:hidden"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
+          aria-expanded={open}
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -72,10 +89,18 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-char md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
           >
-            <div className="flex items-center justify-between px-6 py-4">
+            <div className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
               <span className="font-display text-2xl text-ivory">MELLO</span>
-              <button onClick={() => setOpen(false)} aria-label="Close menu">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center"
+              >
                 <X className="h-6 w-6 text-ivory" />
               </button>
             </div>
@@ -86,7 +111,7 @@ export function Navbar() {
                 hidden: {},
                 show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
               }}
-              className="flex flex-col gap-1 px-6 py-8"
+              className="flex max-h-[calc(100dvh-5rem)] flex-col gap-1 overflow-y-auto px-4 py-6 sm:px-6 sm:py-8"
             >
               {[...links, { href: "/create", label: "Create Experience" }].map(
                 (l) => (

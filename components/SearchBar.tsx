@@ -20,14 +20,14 @@ export function SearchBar({ basePath = "/experiences" }: { basePath?: string }) 
   return (
     <form
       onSubmit={submit}
-      className="flex items-center gap-2 rounded-full border border-char-line bg-char-soft px-4 py-2.5"
+      className="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-char-line bg-char-soft px-4 py-2.5"
     >
       <Search className="h-4 w-4 shrink-0 text-ivory/40" />
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search by city, vibe or tag"
-        className="w-full bg-transparent text-sm text-ivory placeholder:text-ivory/35 focus:outline-none"
+        className="min-w-0 w-full bg-transparent text-sm text-ivory placeholder:text-ivory/35 focus:outline-none"
       />
     </form>
   );

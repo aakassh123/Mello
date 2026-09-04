@@ -26,7 +26,7 @@ export default function ExperiencesPage({
   });
 
   return (
-    <div className="mx-auto max-w-7xl px-6 pb-24 pt-32">
+    <div className="mx-auto max-w-7xl px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
       <h1 className="font-display text-5xl text-ivory">Discover Experiences</h1>
       <p className="mt-3 max-w-lg text-ivory/55">
         {experiences.length} experiences and counting, across meetups, parties,

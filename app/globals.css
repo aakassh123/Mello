@@ -10,10 +10,17 @@ html {
 body {
   position: relative;
   min-width: 320px;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 12% 0%, rgba(255, 107, 95, 0.12), transparent 28rem),
     #0b1020;
   color: #f7f8ff;
+}
+
+@media (max-width: 640px) {
+  h1.font-display {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+  }
 }
 
 .site-video-content .bg-char {

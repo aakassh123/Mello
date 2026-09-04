@@ -44,10 +44,10 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
 
         <div className="space-y-3 p-5">
           <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-xl text-ivory transition-colors group-hover:text-beige">
+            <h3 className="min-w-0 font-display text-xl text-ivory transition-colors group-hover:text-beige">
               {experience.title}
             </h3>
-            <span className="whitespace-nowrap font-display text-lg text-ivory">
+            <span className="shrink-0 whitespace-nowrap font-display text-lg text-ivory">
               {formatPrice(experience.price)}
             </span>
           </div>

@@ -11,13 +11,13 @@ const MY_INTERESTS = ["Travel", "Music", "Photography"];
 
 export default function PeoplePage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 pb-24 pt-32">
+    <div className="mx-auto max-w-7xl px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
       <h1 className="font-display text-5xl text-ivory">Discover People</h1>
       <p className="mt-3 max-w-lg text-ivory/55">
         Only what you need to say hello: first name, city and shared interests.
       </p>
 
-      <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {people.map((p) => (
           <PeopleCard
             key={p.id}
