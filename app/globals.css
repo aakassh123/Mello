@@ -4,20 +4,20 @@
 
 html {
   scroll-behavior: smooth;
-  background: #15130f;
+  background: #0b1020;
 }
 
 body {
   position: relative;
   min-width: 320px;
   background:
-    radial-gradient(circle at 12% 0%, rgba(179, 102, 63, 0.08), transparent 28rem),
-    #15130f;
-  color: #f4efe3;
+    radial-gradient(circle at 12% 0%, rgba(255, 107, 95, 0.12), transparent 28rem),
+    #0b1020;
+  color: #f7f8ff;
 }
 
 .site-video-content .bg-char {
-  background-color: rgba(21, 19, 15, 0.86);
+  background-color: rgba(11, 16, 32, 0.86);
 }
 
 footer {
@@ -26,12 +26,12 @@ footer {
 }
 
 ::selection {
-  background-color: #b3663f;
-  color: #f4efe3;
+  background-color: #ff6b5f;
+  color: #0b1020;
 }
 
 :focus-visible {
-  outline: 2px solid #dcceb0;
+  outline: 2px solid #ff8f7a;
   outline-offset: 4px;
 }
 
@@ -52,13 +52,13 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #15130f;
+  background: #0b1020;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 3px solid #15130f;
+  border: 3px solid #0b1020;
   border-radius: 999px;
-  background: #332d24;
+  background: #29334d;
 }
 
 

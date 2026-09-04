@@ -10,15 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         char: {
-          DEFAULT: "#15130F", // deep charcoal / near-black
-          soft: "#211D17",
-          line: "#332D24",
+          DEFAULT: "#0B1020",
+          soft: "#141C31",
+          line: "#29334D",
         },
-        ivory: "#F4EFE3",
-        beige: "#DCCEB0",
-        grey: "#8C8577",
-        clay: "#B3663F", // muted terracotta accent, used sparingly
-        moss: "#5F6B4C", // muted sage accent, used sparingly
+        ivory: "#F7F8FF",
+        beige: "#FFD2C2",
+        grey: "#A7B0C6",
+        clay: "#FF6B5F",
+        moss: "#FF8F7A",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],
